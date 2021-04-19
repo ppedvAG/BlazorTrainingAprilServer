@@ -1,0 +1,12 @@
+﻿@page "/binding" 
+<h3>Binding</h3>
+<input @bind-value="MyProperty" @bind-value:event="oninput"/>
+<input value="@MyProperty" @onchange="(e)=>change(e)" />
+@MyProperty
+@code {
+    public string MyProperty { get; set; }
+    void change(ChangeEventArgs e)
+    {
+        MyProperty = e.Value.ToString();
+    }
+}
