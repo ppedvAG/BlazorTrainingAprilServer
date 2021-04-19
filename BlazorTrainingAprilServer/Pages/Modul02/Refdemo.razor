@@ -1,12 +1,14 @@
 ﻿@page "/refdemo"
 <h3>Refdemo</h3>
 <SurveyPrompt @ref="sp1"></SurveyPrompt>
+<h1 @ref="MyElement">Hello world</h1>
 @code {
     SurveyPrompt sp1;
+    ElementReference MyElement;
     protected override void OnInitialized()
     {
-        
-        //sp1.Title = "Hello World";
-        //sp1 ist null
+
+       //sp1.Title = "Hello World";
+       
     }
 }
