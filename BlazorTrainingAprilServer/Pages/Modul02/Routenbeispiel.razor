@@ -1,0 +1,14 @@
+﻿@page "/demo"
+@page "/demo/edit"
+@page "/demo/{demo}"
+@page "/demo/{id:int}"
+<h3>Routenbeispiel</h3>
+@id<br />
+@demo
+
+@code {
+    [Parameter]
+    public string demo { get; set; }
+    [Parameter]
+    public int id { get; set; }
+}
