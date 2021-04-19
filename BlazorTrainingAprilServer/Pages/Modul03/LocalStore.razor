@@ -1,0 +1,16 @@
+﻿@page "/ls"
+@using  Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage _ProtectedLocalStorage
+<h3>LocalStore</h3>
+<input @bind="MyProperty" class="form-control" /> 
+<button @onclick="save" class="btn btn-outline-primary">save</button>
+@code {
+    public string MyProperty { get; set; }
+
+    void save()
+    {
+        _ProtectedLocalStorage.SetAsync("key", MyProperty);
+        
+
+    }
+}

@@ -8,4 +8,8 @@
     <Folder Include="Pages\Modul01\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.5" />
+  </ItemGroup>
+
 </Project>
