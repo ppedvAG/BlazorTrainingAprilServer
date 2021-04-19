@@ -1,5 +1,12 @@
-﻿<h3>Refdemo</h3>
-
+﻿@page "/refdemo"
+<h3>Refdemo</h3>
+<SurveyPrompt @ref="sp1"></SurveyPrompt>
 @code {
-
+    SurveyPrompt sp1;
+    protected override void OnInitialized()
+    {
+        
+        //sp1.Title = "Hello World";
+        //sp1 ist null
+    }
 }
