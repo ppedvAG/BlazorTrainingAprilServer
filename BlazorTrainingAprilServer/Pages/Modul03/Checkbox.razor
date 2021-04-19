@@ -1,0 +1,7 @@
+﻿@page "/cb"
+<h3>Checkbox</h3>
+<input type="checkbox" @bind="MyProperty" />
+<h1 style='@(MyProperty?"text-decoration:line-through;":"")'>Hallo Welt</h1>
+@code {
+    public bool MyProperty { get; set; }
+}
