@@ -1,8 +1,13 @@
-﻿@page "/d2" 
+﻿@page "/d2"
+@*@attribute [Authorize]*@
 <h3>Demo2</h3>
-
 <AuthorizeView>
-    Hello, @context.User.Identity.Name!
+    <Authorized>
+        Hallo, @context.User.Identity.Name!
+    </Authorized>
+    <NotAuthorized>
+        anmelden
+    </NotAuthorized>
 </AuthorizeView>
 @code {
 
