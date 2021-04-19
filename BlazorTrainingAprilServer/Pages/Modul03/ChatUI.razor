@@ -34,8 +34,13 @@
 
 @code {
     public string NeuMsg { get; set; }
+    protected override void OnInitialized()
+    {
+        //StateHasChanged();
+        vm.OnAdd += () => InvokeAsync(StateHasChanged);
+    }
     void send()
     {
-        vm.a
+        vm.Add(NeuMsg);
     }
 }
