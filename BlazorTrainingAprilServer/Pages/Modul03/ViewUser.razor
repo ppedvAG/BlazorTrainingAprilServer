@@ -1,0 +1,14 @@
+﻿@page "/viewuser" 
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor context
+<h3>ViewUser</h3>
+@context.HttpContext.User.Identity.Name
+
+@code {    
+   
+    protected override void  OnAfterRender(bool firstRender)
+    {
+        var u = context.HttpContext.User.Identity.Name;
+    }
+
+}
