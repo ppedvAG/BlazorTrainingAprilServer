@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Web;
+using BlazorTrainingAprilServer.Pages.Modul03;
 
 namespace BlazorTrainingAprilServer
 {
@@ -32,6 +33,7 @@ namespace BlazorTrainingAprilServer
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddHttpContextAccessor();
+            services.AddSingleton<ChatVM>();
            
         }
 
