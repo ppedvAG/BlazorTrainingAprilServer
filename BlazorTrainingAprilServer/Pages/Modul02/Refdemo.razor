@@ -2,13 +2,23 @@
 <h3>Refdemo</h3>
 <SurveyPrompt @ref="sp1"></SurveyPrompt>
 <h1 @ref="MyElement">Hello world</h1>
+<HannesComponent @ref="hannes"></HannesComponent>
 @code {
     SurveyPrompt sp1;
     ElementReference MyElement;
+    HannesComponent hannes;
     protected override void OnInitialized()
     {
 
-       //sp1.Title = "Hello World";
-       
+        //sp1.Title = "Hello World";
+        // zu früh
+
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
     }
 }
