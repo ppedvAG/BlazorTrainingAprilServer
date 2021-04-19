@@ -1,6 +1,12 @@
 ﻿@page "/cb"
 <h3>Checkbox</h3>
-<input type="checkbox" @bind="MyProperty" />
+
+
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1"  @bind="MyProperty">
+    <label class="custom-control-label" for="customCheck1">boostrap checkbox</label>
+</div>
+
 <h1 style='@(MyProperty?"text-decoration:line-through;":"")'>Hallo Welt</h1>
 @code {
     public bool MyProperty { get; set; }
