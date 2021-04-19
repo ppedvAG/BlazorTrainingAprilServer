@@ -1,0 +1,18 @@
+﻿<h3>Eingabe</h3>
+@MyProperty
+
+@code {
+    [Parameter]
+    public int MyProperty { get; set; }
+
+    private int myVar;
+
+    public int ObjProperty
+    {
+        get { return myVar; }
+        set { myVar = value;
+            myVar = MyProperty;
+        }
+    }
+
+}

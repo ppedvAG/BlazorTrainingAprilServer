@@ -1,0 +1,11 @@
+﻿@page "/ue" 
+<h3>UseEingabe</h3>
+<Eingabe MyProperty="12" @ref="ein"></Eingabe>
+@code {
+    Eingabe ein;
+    void Fake()
+    {
+
+        ein.ObjProperty = 24;
+    }
+}
