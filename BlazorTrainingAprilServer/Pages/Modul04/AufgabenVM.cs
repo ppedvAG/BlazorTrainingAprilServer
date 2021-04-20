@@ -11,15 +11,15 @@ namespace BlazorTrainingAprilServer.Pages.Modul04
     public class AufgabenVM
     {
         
-        [Inject]
+   
         TodoDBContext db { get; set; }
         public List<Aufgaben> AufgabenListe { get; set; }
         public Action OnAufgabenChanged;
        
 
-        public AufgabenVM()
+        public AufgabenVM(TodoDBContext _db)
         {
-         
+            db = _db;
             AufgabenListe = db.Aufgabens.ToList();
         }
         public void Add()
