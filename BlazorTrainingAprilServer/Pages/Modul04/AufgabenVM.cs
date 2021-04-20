@@ -17,10 +17,10 @@ namespace BlazorTrainingAprilServer.Pages.Modul04
         public List<Aufgaben> AufgabenListe { get; set; }
         public Action OnAufgabenChanged;
 
-        public AufgabenVM(IServiceProvider serviceProvider)
-        {
-           db= serviceProvider.GetRequiredService<TodoDBContext>();
-        }
+        //public AufgabenVM(IServiceProvider serviceProvider)
+        //{
+        //   db= serviceProvider.GetRequiredService<TodoDBContext>();
+        //}
         public AufgabenVM(TodoDBContext _db)
         {
             db = _db;
