@@ -1,0 +1,14 @@
+﻿@page "/js"
+@using RazorClassLibrary1 
+@inject IJSRuntime JSruntime
+<h3>JSComponent</h3>
+<button @onclick="Click">Js Alert </button>
+@code {
+    async void Click()
+    {
+        // var ret= await   JSruntime.InvokeAsync<bool>("confirm", "Nachricht");
+        JSruntime.InvokeVoidAsync("eval","document.title='ppedv website'");
+        var o = new ExampleJsInterop(JSruntime);
+        var ret=await o.Prompt("Hallo Welt aus .net core");
+    }
+}
