@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorTrainingAprilServer.Pages.Modul03;
+using Microsoft.AspNetCore.Server.IISIntegration;
 
 namespace BlazorTrainingAprilServer
 {
@@ -34,7 +35,9 @@ namespace BlazorTrainingAprilServer
             services.AddSingleton<WeatherForecastService>();
             services.AddHttpContextAccessor();
             services.AddSingleton<ChatVM>();
-           
+            //services.AddAuthentication(IISDefaults.AuthenticationScheme);
+            services.AddAuthentication(IISDefaults.AuthenticationScheme); 
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
