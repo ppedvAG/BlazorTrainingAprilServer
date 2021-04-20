@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorTrainingAprilServer.Pages.Modul03;
 using Microsoft.AspNetCore.Server.IISIntegration;
+using Microsoft.EntityFrameworkCore;
+using BlazorTrainingAprilServer.models;
+using BlazorTrainingAprilServer.Pages.Modul04;
 
 namespace BlazorTrainingAprilServer
 {
@@ -38,6 +41,8 @@ namespace BlazorTrainingAprilServer
             //services.AddAuthentication(IISDefaults.AuthenticationScheme);
             services.AddAuthentication(IISDefaults.AuthenticationScheme); 
             services.AddAuthorization();
+            services.AddDbContext<TodoDBContext>(o=>o.UseSqlServer(Configuration.GetConnectionString("AufgabenConn")));
+            services.AddScoped<AufgabenVM>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

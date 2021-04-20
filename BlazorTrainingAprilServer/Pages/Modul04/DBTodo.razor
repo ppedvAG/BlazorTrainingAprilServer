@@ -1,0 +1,29 @@
+﻿@page "/dbtodo" 
+@inject AufgabenVM vm
+<h3>DBTodo</h3>
+<div class="row">
+    <div class="col">
+        <div class="card-deck">
+            @foreach (var item in vm.AufgabenListe)
+            {
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Erledigt</h5>
+
+                        <p class="card-text">@item.Text</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            }
+
+            </div>
+        </div>
+    </div>
+
+@code {
+  //  public AufgabenVM vm = new AufgabenVM();
+  // Rätsel lösen
+  //Todo: 3 Karten nebeneinander
+
+}
