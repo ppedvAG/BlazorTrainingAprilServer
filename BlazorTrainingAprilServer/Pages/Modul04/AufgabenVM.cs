@@ -1,6 +1,7 @@
 ﻿using BlazorTrainingAprilServer.models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,11 @@ namespace BlazorTrainingAprilServer.Pages.Modul04
         TodoDBContext db { get; set; }
         public List<Aufgaben> AufgabenListe { get; set; }
         public Action OnAufgabenChanged;
-       
 
+        public AufgabenVM(IServiceProvider serviceProvider)
+        {
+           db= serviceProvider.GetRequiredService<TodoDBContext>();
+        }
         public AufgabenVM(TodoDBContext _db)
         {
             db = _db;
