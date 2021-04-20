@@ -1,0 +1,31 @@
+﻿@typeparam ItemType
+
+@if (items == null)
+{
+@Loading }
+else if (!items.Any())
+{
+@Empty }
+else
+{
+<div class="list-group ">
+    @foreach (var item in items)
+    {
+<div class="list-group-item">
+    @ItemTemplate(item)
+</div>}
+</div>}
+
+@code { 
+    IEnumerable<ItemType> items;
+
+    [Parameter] public Func<Task<IEnumerable<ItemType>>> Loader { get; set; }
+    [Parameter] public RenderFragment Loading { get; set; }
+    [Parameter] public RenderFragment Empty { get; set; }
+    [Parameter] public RenderFragment<ItemType> ItemTemplate { get; set; }
+    [Parameter] public IEnumerable<ItemType> Daten { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        items = Daten;
+    } }

@@ -1,0 +1,16 @@
+﻿@page "/UseTL"
+@using Modul04
+@using models 
+@inject AufgabenVM vm
+<h3>UseTL</h3>
+<TemplateListe Daten="vm.AufgabenListe" ItemType="Aufgaben" Context="Item">
+    <Empty>nix</Empty>
+    <Loading>...</Loading>
+   <ItemTemplate>
+       <div>@Item.Text </div>
+   </ItemTemplate>
+</TemplateListe>
+@code {
+
+
+}
