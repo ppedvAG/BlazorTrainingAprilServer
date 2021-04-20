@@ -1,0 +1,23 @@
+﻿@page "/modal"
+<h3>UseModal</h3>
+<Modalppedv Titel="Hallo Welt" @ref="mymodal" OnSave="Save">
+    <p>hier Daten</p>
+    <input @bind="Daten" />
+
+</Modalppedv>
+<button @onclick="show">show</button>
+
+@code {
+    string Daten;
+    Modalppedv mymodal;
+    void show()
+    {
+        mymodal.Show();
+
+    }
+    void Save()
+    {
+
+    }
+
+}
